@@ -1,75 +1,79 @@
-# 🍕 **Pizza Delivery App**  
+# 🍕 **Pizza Delivery App**
 
-🔗 **Live Demo:** [pizza-macksimbondarews-projects.vercel.app](https://pizza-macksimbondarews-projects.vercel.app)  
+🔗 **Live Demo:** [Pizza Delivery App on Vercel](https://pizza-delivery-app-nu.vercel.app)
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.1.1-blue)](https://nextjs.org/)  
-[![TypeScript](https://img.shields.io/badge/TypeScript-✔️-blue)](https://www.typescriptlang.org/)  
-[![Prisma](https://img.shields.io/badge/Prisma-✔️-blue)](https://www.prisma.io/)  
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-✔️-blue)](https://tailwindcss.com/)  
-
-🚀 **Pizza Delivery App** is a web application for ordering pizza, built with **Next.js**.  
-It provides **product filtering, category management, order processing**, and **online payments via YooKassa**.
+![Next.js](https://img.shields.io/badge/Next.js-15.1.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-✔️-blue)
+![Prisma](https://img.shields.io/badge/Prisma-✔️-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-✔️-blue)
 
 ---
 
-## 📌 **Core Technologies**
+## 📌 **Overview**
+The **Pizza Delivery App** allows users to explore the menu, filter pizzas by various criteria, and place orders. Built with **Next.js**, **Prisma**, and **Tailwind CSS**, the app supports **dynamic rendering** and **API-based integrations** such as **payment gateway via YooKassa** and **authentication via NextAuth**.
+
+---
+
+## 📋 **Core Technologies**
 - 🏗 **Frontend**: `Next.js`, `React`, `TailwindCSS`
-- ⚡ **Backend**: `Next.js API Routes`
-- 🗃 **Database**: `PostgreSQL` + `Prisma ORM`
-- 🔐 **Authentication**: `next-auth`
-- 💳 **Payments**: `YooKassa`
+- ⚡ **Backend**: `Next.js API Routes`, `Prisma ORM` for DB interactions
+- 🗃 **Database**: `PostgreSQL` with **Prisma**
+- 🔐 **Authentication**: `next-auth` (GitHub, Google, and more)
+- 💳 **Payments**: `YooKassa` integration for processing payments
 - 🎯 **State Management**: `Zustand`
-- 📦 **Validation**: `Zod`, `React Hook Form`
+- 📦 **Form Handling**: `react-hook-form`, `zod` for form validation
+- 🔧 **Utilities**: `axios`, `clsx`, `react-hot-toast`
 
 ---
 
 ## 🚀 **Features**
-✔️ **Dynamic pizza pages**  
-✔️ **Product filtering (by size, ingredients, price, etc.)**  
-✔️ **Category and product management**  
-✔️ **Authentication via Next-Auth**  
-✔️ **Order processing with YooKassa payments**  
-✔️ **Admin panel for product management**  
+✔️ **Search & Filter** pizzas by size, type, and ingredients  
+✔️ **Dynamic Pizza Pages** with detailed information  
+✔️ **User Authentication** via **Google**, **GitHub**, and **email**  
+✔️ **Order Management** with **payment integration** via YooKassa  
+✔️ **Responsive UI** using **Tailwind CSS**  
+✔️ **Admin Panel** to manage categories and products
 
 ---
 
 ## 📦 **Local Setup**
-### 1️⃣ **Clone the repository**
+### 1️⃣ **Clone the Repository**
 ```bash
 git clone https://github.com/MacksimBondarew/pizza.git
 cd pizza
 ```
 
-### 2️⃣ **Configure environment variables**
-Create a `.env` file in the root directory and add:
+### 2️⃣ **Setup Environment Variables**
+Create a `.env` file in the root directory and add the following configurations:
 ```env
-DATABASE_URL=your_database_url
-NEXTAUTH_SECRET=your_secret
-NEXT_PUBLIC_API_URL=http://localhost:3000
-YOOKASSA_SHOP_ID=your_yookassa_shop_id
-YOOKASSA_SECRET_KEY=your_yookassa_secret_key
+POSTGRES_PRISMA_URL=your_database_url
+POSTGRES_URL_NON_POOLING=your_database_url
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+RESEND_API_KEY=your_resend_api_key
+YOOKASSA_API_KEY=your_yookassa_api_key
+YOOKASSA_CALLBACK_URL=http://localhost:3000/?paid
+GITHUB_ID=your_github_id
+GITHUB_SECRET=your_github_secret
+NEXTAUTH_SECRET=your_nextauth_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-### 3️⃣ **Install dependencies**
+### 3️⃣ **Install Dependencies**
 ```bash
 npm install
 ```
 
-### 4️⃣ **Run Prisma Studio (optional)**
-```bash
-npm run prisma:studio
-```
-
-### 5️⃣ **Run database migrations**
+### 4️⃣ **Run Prisma Migrations**
 ```bash
 npx prisma migrate dev --name init
 ```
 
-### 6️⃣ **Start the server**
+### 5️⃣ **Run the Application Locally**
 ```bash
 npm run dev
 ```
-📌 *The app will be available at* `http://localhost:3000`.
+📌 *Your app will be available at `http://localhost:3000`.*
 
 ---
 
@@ -77,31 +81,29 @@ npm run dev
 ```
 📁 pizza
  ┣ 📁 .next          # Next.js build files
+ ┣ 📁 prisma         # Prisma schema and database configurations
  ┣ 📁 src
- ┃ ┣ 📁 app         # Next.js pages (App Router)
- ┃ ┃ ┣ 📁 (root)     # Main page
- ┃ ┃ ┣ 📁 (checkout)  # Order processing
- ┃ ┣ 📁 api         # API routes
- ┃ ┣ 📁 prisma      # Database configuration
- ┃ ┣ 📁 shared      # Shared components (UI, forms, modals)
- ┃ ┣ 📁 hooks       # Custom React hooks
- ┃ ┣ 📁 lib         # API interaction logic
- ┃ ┣ 📁 store       # State management (Zustand)
- ┃ ┗ 📁 services    # Integration with payment services
- ┣ 📄 .env.example  # Example environment variables file
- ┣ 📄 README.md     # Project documentation
+ ┃ ┣ 📁 app         # App Router pages (checkout, dashboard, etc.)
+ ┃ ┣ 📁 api         # API routes (handling requests like checkout)
+ ┃ ┣ 📁 components  # Reusable UI components (Buttons, Inputs, etc.)
+ ┃ ┣ 📁 hooks       # Custom hooks for handling logic
+ ┃ ┣ 📁 shared      # Shared components, utility functions
+ ┃ ┣ 📁 store       # Zustand for state management
+ ┃ ┗ 📁 styles      # TailwindCSS files and custom styles
+ ┣ 📄 .env.example   # Example of the .env file
+ ┣ 📄 README.md      # This file
+ ┣ 📄 package.json   # Project dependencies and scripts
+ ┣ 📄 tsconfig.json  # TypeScript configuration
  ┗ 📄 next.config.js # Next.js configuration
 ```
 
 ---
 
-## 🔥 **Deploying to Vercel**
-This project can be deployed to **Vercel**: [Pizza Delivery App](https://pizza-macksimbondarews-projects.vercel.app)  
-
+## 🔥 **Deploy on Vercel**
 To deploy your own version:
 1️⃣ **Sign up at [Vercel](https://vercel.com/)**  
-2️⃣ **Set environment variables** (`DATABASE_URL`, `NEXTAUTH_SECRET`, `YOOKASSA_SHOP_ID`, `YOOKASSA_SECRET_KEY`)  
-3️⃣ **Deploy using the command**:
+2️⃣ **Set environment variables** (`POSTGRES_PRISMA_URL`, `NEXT_PUBLIC_API_URL`, etc.) in Vercel  
+3️⃣ **Deploy the app**:
 ```bash
 vercel --prod
 ```
@@ -109,7 +111,16 @@ vercel --prod
 
 ---
 
-## 🤝 **How to Contribute**
+## 🛠 **Running Tests**
+If you are planning to add tests, you can run them using the following script:
+```bash
+npm run test
+```
+
+---
+
+## 🤝 **Contributing**
+If you want to contribute:
 1. **Fork the repository**  
 2. **Create a new branch**:
    ```bash
@@ -117,17 +128,18 @@ vercel --prod
    ```
 3. **Make changes and commit**:
    ```bash
-   git commit -m "Added new feature"
+   git commit -m "Added feature"
    ```
 4. **Submit a PR to `main`** 🚀
 
 ---
 
-## 🔗 **Useful Resources**
-- **Live Project** → [Pizza Delivery App](https://pizza-macksimbondarews-projects.vercel.app)  
+## 🔗 **Useful Links**
+- **Live Demo** → [Pizza Delivery App on Vercel](https://pizza-delivery-app-nu.vercel.app)  
 - **Next.js Docs** → [nextjs.org](https://nextjs.org/)  
 - **Prisma Docs** → [prisma.io](https://www.prisma.io/)  
-- **Tailwind CSS Docs** → [tailwindcss.com](https://tailwindcss.com/)  
+- **TailwindCSS Docs** → [tailwindcss.com](https://tailwindcss.com/)  
 - **YooKassa Docs** → [yookassa.ru](https://yookassa.ru/)  
+- **Resend Docs** → [resend.com](https://resend.com/)  
 
-💙 Thank you for using Pizza Delivery App! 🍕 🚀
+💙 **Thank you for using Pizza Delivery App!** 🍕 🚀
