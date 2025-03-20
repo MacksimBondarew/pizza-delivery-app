@@ -10,7 +10,6 @@ import {
 import { User } from "@prisma/client";
 import toast from "react-hot-toast";
 import { signOut } from "next-auth/react";
-import { Container } from "./container";
 import { Title } from "./title";
 import { FormInput } from "./form";
 import { Button } from "../ui";
@@ -46,7 +45,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
             return toast.error("Ошибка при обновлении данных", {
                 icon: "❌",
             });
-            console.log(error)
+            console.log(error);
         }
     };
 
@@ -57,7 +56,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
     };
 
     return (
-        <Container className="my-10">
+        <div className="mx-auto container  px-3 my-10">
             <Title
                 text={`Личные данные | #${data.id}`}
                 size="md"
@@ -101,6 +100,6 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
                     </Button>
                 </form>
             </FormProvider>
-        </Container>
+        </div>
     );
 };

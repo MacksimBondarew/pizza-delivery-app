@@ -3,7 +3,6 @@
 import { Api } from "@/shared/services/api-client";
 import { IStory } from "@/shared/services/stories";
 import React from "react";
-import { Container } from "./container";
 import { cn } from "@/shared/lib/utils";
 import { X } from "lucide-react";
 import ReactStories from "react-insta-stories";
@@ -36,9 +35,9 @@ export const Stories: React.FC<Props> = ({ className }) => {
 
     return (
         <>
-            <Container
+            <div
                 className={cn(
-                    "flex items-center overflow-hidden justify-between gap-2 my-10",
+                    "flex container px-3 mx-auto items-center overflow-x-hidden justify-center gap-2 my-10",
                     className
                 )}>
                 {stories.length === 0 &&
@@ -54,8 +53,8 @@ export const Stories: React.FC<Props> = ({ className }) => {
                         key={story.id}
                         onClick={() => onClickStory(story)}
                         className="rounded-md cursor-pointer"
-                        height={250}
-                        width={200}
+                        height={300}
+                        width={250}
                         src={story.previewImageUrl}
                     />
                 ))}
@@ -83,7 +82,7 @@ export const Stories: React.FC<Props> = ({ className }) => {
                         </div>
                     </div>
                 )}
-            </Container>
+            </div>
         </>
     );
 };

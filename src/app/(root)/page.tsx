@@ -1,9 +1,4 @@
-import {
-    Container,
-    Filters,
-    ProductsGroupList,
-    TopBar,
-} from "@/shared/components/shared";
+import { Filters, ProductsGroupList, TopBar } from "@/shared/components/shared";
 import { Suspense } from "react";
 import { findPizzas, GetSearchParams } from "@/shared/lib/find-pizzas";
 import { Stories } from "@/shared/components/shared/stories";
@@ -26,10 +21,10 @@ export default async function Home({
                 )}
             />
             <Stories />
-            <Container className="pt-10 pb-14">
+            <div className="pt-10 mx-auto container  px-3 pb-14">
                 <div className="flex gap-[60px]">
                     {/* Filter */}
-                    <div className="w-[250px]">
+                    <div className="w-[250px] hidden xl:block">
                         <Suspense>
                             <Filters />
                         </Suspense>
@@ -61,7 +56,7 @@ export default async function Home({
                         </div>
                     </div>
                 </div>
-            </Container>
+            </div>
         </>
     );
 }

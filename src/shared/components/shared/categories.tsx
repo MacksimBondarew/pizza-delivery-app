@@ -15,7 +15,7 @@ export const Categories: React.FC<Props> = ({ className, items }) => {
     return (
         <div
             className={cn(
-                "inline-flex gap-1 bg-gray-50 p-1 rounded-2xl",
+                "inline-flex flex-wrap justify-center gap-1 bg-gray-50 p-1 rounded-2xl",
                 className
             )}>
             {items.map((item, index) => (

@@ -1,4 +1,4 @@
-import { Container, Header } from "@/shared/components/shared";
+import { Header } from "@/shared/components/shared";
 
 export const metadata = {
     title: "Bag",
@@ -18,7 +18,7 @@ export default function CheckOutLayout({
                 className="bg-[#F4F1EE]"
             />
             <main className="min-h-screen bg-[#F4F1EE]">
-                <Container className="pt-10">{children}</Container>
+                <div className="container  px-3 mx-auto pt-10">{children}</div>
             </main>
         </>
     );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "./container";
 import { Categories } from "./categories";
 import { SortPopup } from "./sort-popup";
 import { cn } from "@/shared/lib/utils";
@@ -17,10 +16,10 @@ export const TopBar: React.FC<Props> = ({ className, categories }) => {
                 "sticky top-0 bg-white py-5 shadow-lg shadow-black/5 z-10",
                 className
             )}>
-            <Container className="flex items-center justify-between ">
+            <div className="flex container px-3 justify-center mx-auto  flex-wrap items-center lg:justify-between">
                 <Categories items={categories} />
                 <SortPopup />
-            </Container>
+            </div>
         </div>
     );
 };

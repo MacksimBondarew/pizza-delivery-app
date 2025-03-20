@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/lib/utils";
 import React from "react";
-import { CartButton, Container, SearchInput } from "./index";
+import { CartButton, SearchInput } from "./index";
 import Image from "next/image";
 import Link from "next/link";
 import { ProfileButton } from "./profile-button";
@@ -22,7 +22,7 @@ export const Header: React.FC<Props> = ({
     const [openAuthModal, setOpenAuthModal] = React.useState(false);
     return (
         <header className={cn("border border-b", className)}>
-            <Container className="flex items-center justify-between py-8">
+            <div className="flex container justify-center gap-4 px-3 mx-auto flex-wrap items-center sm:justify-between py-8">
                 {/* left part */}
                 <Link href="/">
                     <div className="flex items-center gap-4">
@@ -43,7 +43,7 @@ export const Header: React.FC<Props> = ({
                     </div>
                 </Link>
                 {hasSearch && (
-                    <div className="mx-10 flex-1">
+                    <div className="order-1 basis-full mt-5 lg:order-none lg:basis-auto lg:mt-0 flex-1">
                         <SearchInput />
                     </div>
                 )}
@@ -62,7 +62,7 @@ export const Header: React.FC<Props> = ({
                         </div>
                     )}
                 </div>
-            </Container>
+            </div>
         </header>
     );
 };
