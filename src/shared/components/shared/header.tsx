@@ -43,7 +43,7 @@ export const Header: React.FC<Props> = ({
                     </div>
                 </Link>
                 {hasSearch && (
-                    <div className="order-1 basis-full mt-5 lg:order-none lg:basis-auto lg:mt-0 flex-1">
+                    <div className="order-1 z-0 basis-full mt-5 lg:order-none lg:basis-auto lg:mt-0 flex-1">
                         <SearchInput />
                     </div>
                 )}
